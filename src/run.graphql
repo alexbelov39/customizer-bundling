@@ -1,0 +1,39 @@
+query RunInput {
+  cart {
+    lines {
+      id
+      quantity
+      cost {
+        amountPerQuantity {
+          amount
+        }
+      }
+      merchandise {
+        ... on ProductVariant {
+          id
+          title
+          sku
+          product {
+            title
+          }
+        }
+      }
+      bundleId: attribute(key: "_bundleID") {
+        key
+        value
+      }
+      a_material: attribute(key: "Material") {
+        key
+        value
+      }
+      a_legs: attribute(key: "Legs") {
+        key
+        value
+      }
+      a_base: attribute(key: "Base") {
+        key
+        value
+      }
+    }
+  }
+}
